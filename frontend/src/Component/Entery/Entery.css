@@ -1,0 +1,21 @@
+.entery {
+    background-color: blueviolet;
+    min-height: 850px !important;
+}
+
+.gl {
+    margin-bottom: 300px !important;
+}
+
+.mg img {
+    min-width: 250px;
+    height: 100v;
+}
+
+.wrapper h1 {
+    color: #fff !important;
+}
+
+.bt {
+    float: right;
+}
