@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Sign.css'
 import SignPhoto from './sign.png'
 const Sign = () => {
     const route = useNavigate();
+    const [username, setUsername] = useState<string>("")
+  const [password, setPassword] = useState<string>("")
+  const register = () => {
+    
+    axios.post("http://localhost:4000/register", {
+      username,
+      password
+    }, {
+      withCredentials: true
+    }).then((res : any) => {
+      if (res.data === "success") {
+       window.location.href = "/login"
+     }
+    })
+  }
+
 
   return (
     <div className="sign">
@@ -56,12 +73,12 @@ const Sign = () => {
             <p>Or</p>
         </div>
         <div className="email">
-        <input type="email" placeholder='Email' />
+        <input type="text" placeholder='userName' onChange={e => setUsername(e.target.value)} />
         </div>
         <div className="pass">
-        <input type="password" placeholder='Password' />
+        <input type="password" placeholder='Password'  onChange={e => setPassword(e.target.value)}/>
         </div>
-        <button className='btn btn-danger'>Sign Up</button>
+        <button onClick={register} className='btn btn-danger'>Sign Up</button>
     </div>
   )
 }
