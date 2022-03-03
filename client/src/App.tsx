@@ -14,7 +14,16 @@ import Page from './Component/Page8/Page';
 import Plan from './Component/Plan/Plan';
 import Article from './Component/Article/Article';
 import Sign from './Component/Sign/Sign';
+import {useContext} from 'react'
+import AdminPage from './Pages/AdminPage';
+import Login from './Pages/Login';
+import Profile from './Pages/Profile';
+import { myContext } from './Pages/Context';
+import Register from './Pages/Register';
+
 function App() {
+    const ctx = useContext(myContext);
+
   return (
     <BrowserRouter>
     <div  className="App  text-center">
@@ -33,6 +42,19 @@ function App() {
         <Route path="/article" element={<Article/>}/>
         <Route path="/sign" element={<Sign/>}/>
         <Route path="/" element={<Page/>}/>
+        {
+            ctx ? (
+              <>
+                {ctx.isAdmin ? <Route path='/admin' element={<AdminPage/>}></Route> : null}
+                <Route path='/profile' element={<Profile/>}></Route>  
+              </>
+            ) : (
+              <>
+                <Route path='/login' element={<Login/>}></Route>  
+                <Route path='/register' element={<Register/>}></Route>  
+              </>  
+            )
+        }
      </Routes>
     </div>
     </BrowserRouter>
