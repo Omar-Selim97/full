@@ -87,7 +87,7 @@ app.post("/register", async (req, res) => {
     typeof username !== "string" ||
     typeof password !== "string"
   ) {
-    res.send("Improper Values");
+    res.send("Changes Values");
     return;
   }
   User.findOne({ username }, async (err: Error, doc: DatabaseUserInterface) => {
@@ -143,7 +143,7 @@ app.get("/logout", (req, res) => {
 
 app.post("/deleteuser", isAdministratorMiddleware, async (req, res) => {
   const { id } = req?.body;
-  await User.findByIdAndDelete(id)
+  await User.findByIdAndDelete(id);
   res.send("success");
 });
 

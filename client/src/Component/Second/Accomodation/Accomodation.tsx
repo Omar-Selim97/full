@@ -18,33 +18,33 @@ const Accomodation = () => {
       id: 1,
       title: 'hotel',
       image: hotel,
-      color:'cornflowerblue',
+      color:'aqua',
     },
     {
       id: 2,
       title: 'Bb',
       image:Bb,
-      color:'cornflowerblue',
+      color:'blue',
     },
     {
       id: 3,
       title: 'short',
       image: short,
-      color:'cornflowerblue',
+      color:'rgb(0, 162, 255)',
     },
     
     {
       id: 4,
       title: 'sofa',
       image: sofa,
-      color:'cornflowerblue',
+      color:'rgb(27, 115, 167)',
     },
     
     {
       id: 5,
       title: 'trent',
       image: trent,
-      color:'cornflowerblue',
+      color:' rgb(72, 154, 202)',
     },
     
     {

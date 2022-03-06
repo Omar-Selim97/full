@@ -29,7 +29,7 @@ const Article = () => {
       <button
         className=" tdr btn transperant text-end "
         onClick={() => {
-          route("/sign");
+          route("/register");
         }}
       >
         <svg

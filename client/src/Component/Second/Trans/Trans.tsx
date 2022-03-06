@@ -19,33 +19,33 @@ const Trans = () => {
       id: 1,
       title: 'Bus',
       image: Bus,
-      color:'cornflowerblue',
+      color:' rgb(72, 154, 202)',
     },
     {
       id: 2,
       title: 'car',
       image:car,
-      color:'cornflowerblue',
+      color:'rgb(27, 115, 167)',
     },
     {
       id: 3,
       title: 'metro',
       image: metro,
-      color:'cornflowerblue',
+      color:'rgb(0, 162, 255)',
     },
     
     {
       id: 4,
       title: 'plane',
       image: plane,
-      color:'cornflowerblue',
+      color:'aqua',
     },
     
     {
       id: 5,
       title: 'taxi',
       image: taxi,
-      color:'cornflowerblue',
+      color:'blue',
     },
     
     {

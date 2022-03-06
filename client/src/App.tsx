@@ -19,7 +19,6 @@ import AdminPage from './Pages/AdminPage';
 import Login from './Pages/Login';
 import Profile from './Pages/Profile';
 import { myContext } from './Pages/Context';
-import Register from './Pages/Register';
 
 function App() {
     const ctx = useContext(myContext);
@@ -40,7 +39,7 @@ function App() {
         <Route path="/trolly" element={<Trolly/>}/>
         <Route path="/plan" element={<Plan/>}/>
         <Route path="/article" element={<Article/>}/>
-        <Route path="/sign" element={<Sign/>}/>
+        <Route path="/register" element={<Sign/>}/>
         <Route path="/" element={<Page/>}/>
         {
             ctx ? (
@@ -51,7 +50,7 @@ function App() {
             ) : (
               <>
                 <Route path='/login' element={<Login/>}></Route>  
-                <Route path='/register' element={<Register/>}></Route>  
+                <Route path='/register' element={<Sign/>}></Route>  
               </>  
             )
         }
