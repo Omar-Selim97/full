@@ -1,0 +1,11 @@
+.pre {
+    background-color: #fff;
+    min-height: 750px !important;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.pre .anm img {
+    min-width: 300px;
+    min-height: 300px;
+}
