@@ -4,16 +4,16 @@ import cors from "cors";
 import passport from "passport";
 import passportLocal from "passport-local";
 import cookieParser from "cookie-parser";
+import * as bodyParser from "body-parser";
 import session from "express-session";
 import bcrypt from "bcryptjs";
 import User from "./User";
 import dotenv from "dotenv";
 import { DatabaseUserInterface } from "./InterfaceDatabase";
 import { UserT } from "./UserIterface";
-import config from './config'
-import Logging from "./Middelware/Logging";
-import signJWT from "./Middelware/sign";
-import jwt from "jsonwebtoken"
+import {orderRouter} from "./routes/orderRouter";
+
+
 const LocalStrategy = passportLocal.Strategy;
 
 dotenv.config();
@@ -30,16 +30,6 @@ mongoose.connect(
     console.log("Connected To Mongo");
   }
 );
-// jwt
-const NAMESPACE = 'Server';
-mongoose
-    .connect(config.mongo.url, config.mongo.options)
-    .then((result) => {
-        Logging.info(NAMESPACE, 'Mongo Connected');
-    })
-    .catch((error) => {
-      Logging.error(NAMESPACE, error.message, error);
-    });
 
 // Middleware
 const app = express();
@@ -100,7 +90,7 @@ app.post("/register", async (req, res) => {
     typeof username !== "string" ||
     typeof password !== "string"
   ) {
-    res.send("Improper Values");
+    res.send("Changes Values");
     return;
   }
   User.findOne({ username }, async (err: Error, doc: DatabaseUserInterface) => {
@@ -113,7 +103,6 @@ app.post("/register", async (req, res) => {
         password: hashedPassword,
       });
       await newUser.save();
-      
       res.send("success");
     }
   });
@@ -143,9 +132,7 @@ const isAdministratorMiddleware = (
 };
 
 app.post("/login", passport.authenticate("local"), (req, res) => {
-  return res.status(200).json({
-message:"success"
-  })
+  res.send("success");
 });
 
 app.get("/user", (req, res) => {
@@ -159,7 +146,7 @@ app.get("/logout", (req, res) => {
 
 app.post("/deleteuser", isAdministratorMiddleware, async (req, res) => {
   const { id } = req?.body;
-  await User.findByIdAndDelete(id)
+  await User.findByIdAndDelete(id);
   res.send("success");
 });
 
@@ -178,6 +165,9 @@ app.get("/getallusers", isAdministratorMiddleware, async (req, res) => {
     res.send(filteredUsers);
   });
 });
+app.use(bodyParser.json());
+app.use("/orders", orderRouter);
+
 
 app.listen(4000, () => {
   console.log("Server Started");
