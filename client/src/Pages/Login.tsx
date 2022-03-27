@@ -27,7 +27,7 @@ export default function Login() {
           <button
         className="tod btn bg-transparent "
         onClick={() => {
-          route("/register");
+          route("/");
         }}
       >
         <svg

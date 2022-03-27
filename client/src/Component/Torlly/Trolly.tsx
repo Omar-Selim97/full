@@ -1,129 +1,343 @@
-import React from 'react'
-import './Trolly.css'
-import Frame from './Frame/Frame'
-import List from './list.png'
-import Text from './todo.gif'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import "./Trolly.css";
+import Frame from "./Frame/Frame";
+import List from "./list.png";
+import Text from "./todo.gif";
+import { useNavigate } from "react-router-dom";
 
 const Trolly = () => {
-    const route = useNavigate()
+  const route = useNavigate();
 
-    const today = new Date().toLocaleDateString()
+  const today = new Date().toLocaleDateString();
   return (
-    <div className='trolly'>
-            <button className='tod btn bg-transparent '  onClick={()=>{route('/prepare')}}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+    <div className="trolly m-auto">
+      <button
+        className="tod btn bg-transparent "
+        onClick={() => {
+          route("/prepare");
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-arrow-left"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+          />
         </svg>
       </button>
-      <button className=' tdr btn transperant text-end '  onClick={()=>{route('/plan')}}>
-           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
-             <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-           </svg>
-        </button>
-        <h1 className='my-3'>NYC , {today} , Trolly</h1> 
-        <Frame/>
-        <div className=" card col-lg-12 mb-3">
-              <div className="card-body">
-                <img src={List} alt='List' />
+      <button
+        className=" tdr btn transperant text-end "
+        onClick={() => {
+          route("/plan");
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-arrow-right"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+          />
+        </svg>
+      </button>
+      <h1 className="my-3">NYC , {today} , Trolly</h1>
+      <Frame />
+      <div className=" card col-lg-12 mb-3">
+        <div className="card-body">
+          <img src={List} alt="List" />
+        </div>
+      </div>
+
+      <div className=" card col-lg-12 mb-3">
+        <div className="card-body">
+          <span>Create a Todo list :</span>
+          <img src={Text} alt="List" />
+        </div>
+      </div>
+      <div className="accordion accordion-flush" id="accordionFlushExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingOne">
+            <button
+              className="accordion-button collapsed  btn-primary fw-bold px-5"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+             Esential
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            className="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div className="accordion-body">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Passport
+                </label>
               </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Wallet
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Coins
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Mobile
+                </label>
+              </div>
+            </div>
           </div>
-          <div className="group">
-          <div className="estenial">
-                <p>
-                    <button className="btn btn-primary fw-bold px-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Esential
-                        <span className='icon'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className=" bi bi-caret-right" viewBox="0 0 16 16">
-                        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                    </svg>
-                </span>
-                    </button>
-                </p>
-        <div className="collapse" id="collapseExample">
-        <div className="card card-body">
-            <ul className='list-group fw-bold'>
-                <li className='list-group-item'>Passport</li>
-                <li className='list-group-item'>Mobile</li>
-                <li className='list-group-item'>Wallet</li>
-                <li className='list-group-item'>Coins</li>
-            </ul>
         </div>
-        </div>
-
- </div>
-    <div className="clothes">
-        <p>
-            <button className="btn btn-primary fw-bold px-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-               <span> Clothes</span>
-                <span className='icon'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className=" bi bi-caret-right" viewBox="0 0 16 16">
-                        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                    </svg>
-                </span>
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingTwo">
+            <button
+              className="accordion-button collapsed btn-primary fw-bold px-5"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+                Clothes
             </button>
-        </p>
-        <div className="collapse" id="collapseExample">
-        <div className="card card-body">
-            <ul className='list-group fw-bold'>
-                <li className='list-group-item'>Shirts</li>
-                <li className='list-group-item'>Pants</li>
-                <li className='list-group-item'>Underware</li>
-                <li className='list-group-item'>Siwmware</li>
-            </ul>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            className="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+             <div className="accordion-body">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Shirts
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Siwmware
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Pants
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Underware
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-
-    </div>
-    <div className="Care">
-        <p>
-            <button className="btn btn-primary fw-bold px-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingThree">
+            <button
+              className="accordion-button collapsed btn-primary fw-bold px-5"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
                 Care !
-                <span className='icon'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className=" bi bi-caret-right" viewBox="0 0 16 16">
-                        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                    </svg>
-                </span>
             </button>
-        </p>
-        <div className="collapse" id="collapseExample">
-        <div className="card card-body">
-            <ul className='list-group fw-bold'>
-                <li className='list-group-item'>Coditioner</li>
-                <li className='list-group-item'>Shampo</li>
-                <li className='list-group-item'>Soap</li>
-                <li className='list-group-item'>Toath</li>
-            </ul>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            className="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample"
+          >
+             <div className="accordion-body">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Coditioner
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Shampo
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Soap
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Toath
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-
-    </div>
-    <div className="Accessiores">
-        <p>
-            <button className="btn btn-primary fw-bold px-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Accessiores
-            <span className='icon'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className=" bi bi-caret-right" viewBox="0 0 16 16">
-                        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                    </svg>
-                </span>
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingFour">
+            <button
+              className="accordion-button collapsed btn-primary fw-bold px-5"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour"
+              aria-expanded="false"
+              aria-controls="flush-collapseFour"
+            >
+                Accessiores
             </button>
-        </p>
-        <div className="collapse" id="collapseExample">
-        <div className="card card-body">
-            <ul className='list-group fw-bold'>
-                <li className='list-group-item'>Shoes</li>
-                <li className='list-group-item'>Phones Chargers</li>
-                <li className='list-group-item'>Earphones</li>
-                <li className='list-group-item'>Cat cage</li>
-            </ul>
+          </h2>
+          <div
+            id="flush-collapseFour"
+            className="accordion-collapse collapse"
+            aria-labelledby="flush-headingFour"
+            data-bs-parent="#accordionFlushExample"
+          >
+             <div className="accordion-body">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Shoes
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Phones Chargers
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Earphones
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                Cat cage
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-
-    </div>
-        <div className="types">
+      </div>
+      <div className="types">
             <p>
-                <button className="btn btn-primary fw-bold px-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button className="btn  my-3 btn-primary fw-bold px-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Add Categorey
                 <span className='icon'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className=" bi bi-caret-right" viewBox="0 0 16 16">
@@ -133,26 +347,25 @@ const Trolly = () => {
                 </button>
             </p>
         </div>
-        <div className=" card col-lg-12 mb-3">
-              <div className="card-body">
-                  <span>Create a Todo list :</span>
-                <img src={Text} alt='List' />
-              </div>
-          </div>
-        <div className="create">
-            <button className='btn btn-danger'>Create
-                <span className="cr">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil" viewBox="0 0 16 16">
-                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                 </svg>
-                </span>
-            </button>
-        </div>
-</div>
+      <div className="create">
+        <button className="btn btn-danger">
+          Create
+          <span className="cr">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-pencil"
+              viewBox="0 0 16 16"
+            >
+              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+};
 
-         
-</div> 
-  )
-}
-
-export default Trolly
+export default Trolly;

@@ -9,6 +9,8 @@
     justify-content: start;
     color: black;
     align-items: center;
+    position: relative;
+    z-index: 100000000000000000000 !important;
 }
 
 .menu-bars {
@@ -28,6 +30,16 @@
     top: 0;
     left: -100%;
     transition: 850ms;
+    z-index: 100000000000000000000 !important;
+}
+
+@media (max-width: 575px) {
+    .navbar {
+        display: none;
+    }
+    .trolly {
+        overflow-x: hidden;
+    }
 }
 
 .nav-menu.active {

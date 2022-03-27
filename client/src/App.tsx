@@ -18,6 +18,7 @@ import {useContext} from 'react'
 import AdminPage from './Pages/AdminPage';
 import Login from './Pages/Login';
 import Profile from './Pages/Profile';
+import Order from './Component/Order/Order';
 import { myContext } from './Pages/Context';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
      <Routes>
        <Route  path="/easy" element={<Easy/>}/>
        <Route path="/category/*" element={<SecondPage/>}/>
+       <Route path="/orders" element={<Order/>}/>
        <Route path="/entery/*" element={<Entery/>}/>
        <Route path="/prolog" element={<Prolog/>}/>
        <Route path="/todo" element={<Todo/>}/>

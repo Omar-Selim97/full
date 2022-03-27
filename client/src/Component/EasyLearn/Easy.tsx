@@ -15,6 +15,7 @@ import backpack from './images/11.jpeg'
 import family from './images/12.jpg'
 
 import '../../App.css';
+import './Easy.css'
 import { useNavigate } from 'react-router-dom';
 
 function Easy() {
@@ -37,7 +38,43 @@ type Values = {
   image: string;
   color:string;
 };
-
+const myList2:Array<Values> =[
+  {
+    id: 1,
+    title: 'Suitcase',
+    image: suitcase,
+    color:'cornflowerblue',
+  },
+  {
+    id: 2,
+    title: 'Briefcase',
+    image: briefcase,
+    color:'cornflowerblue',
+  },{
+    id: 3,
+    title: 'Handbage',
+    image: handbage,
+    color:'cornflowerblue',
+  },
+  {
+    id: 4,
+    title: 'Multy',
+    image: multy,
+    color:'green',
+  },
+  {
+    id: 5,
+    title: 'Backpack',
+    image: backpack,
+    color:'gray',
+  },
+  {
+    id: 6,
+    title: 'Family',
+    image: family,
+    color:'aqua',
+  },
+]
   const myList:Array<Values> = [
     {
       id: 1,
@@ -79,45 +116,15 @@ type Values = {
       color:'cornflowerblue',
     },
     
-    {
-      id: 7,
-      title: 'Suitcase',
-      image: suitcase,
-      color:'cornflowerblue',
-    },
-    {
-      id: 8,
-      title: 'Briefcase',
-      image: briefcase,
-      color:'cornflowerblue',
-    },{
-      id: 9,
-      title: 'Handbage',
-      image: handbage,
-      color:'cornflowerblue',
-    },
-    {
-      id: 10,
-      title: 'Multy',
-      image: multy,
-      color:'cornflowerblue',
-    },
-    {
-      id: 11,
-      title: 'Backpack',
-      image: backpack,
-      color:'cornflowerblue',
-    },
-    {
-      id: 12,
-      title: 'Family',
-      image: family,
-      color:'cornflowerblue',
-    },
   ]
   const listImage=myList.map((item,i) => {
     return <span key={i}>
-        <img style={{background:color}} onMouseLeave={()=>{setColor(item.color)}}  key={item.id}  onClick={() => alert(`${item.title}`)} src={item.image} alt={item.title}   />
+        <img  key={item.id} style={{borderColor:color}}     onClick={()=>setColor(item.color)} src={item.image} alt={item.title}   />
+    </span>
+  })
+  const listImage2=myList2.map((item,i) => {
+    return <span key={i}>
+        <img  key={item.id} style={{borderColor:color}}     onClick={()=>setColor(item.color)} src={item.image} alt={item.title}   />
     </span>
   })
   return (
@@ -165,9 +172,12 @@ type Values = {
         
         
       <main className='d-block mb-5'>
+        <h4 className='text-info'>Travel Purpose</h4>
         {listImage }
         <br/>
         <br/>
+        <h4>Choose Luggage</h4>
+        {listImage2}
         <button className="btn px-5 " onClick={()=>setHowTimes(howInput)}>Wallet {submittedTimes}</button>
         <br/>
         <br/>
