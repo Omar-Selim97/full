@@ -3,6 +3,7 @@ import Trans from './Trans/Trans'
 import Activity from './Activity/Activity'
 import Accomodation from './Accomodation/Accomodation'
 import Care from './Care/Care'
+import './scond.css'
 import { useNavigate,
   Routes,
   Route,

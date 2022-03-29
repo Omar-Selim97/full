@@ -1,13 +1,13 @@
 import React from "react";
 import "./Trolly.css";
 import Frame from "./Frame/Frame";
+import List from "./list.png";
 import Text from "./todo.gif";
 import { useNavigate } from "react-router-dom";
 
 const Trolly = () => {
   const route = useNavigate();
-  const [counter, setCounter] = React.useState<number>(3)
-  const [counter2, setCounter2] = React.useState<number>(6)
+
   const today = new Date().toLocaleDateString();
   return (
     <div className="trolly m-auto">
@@ -53,7 +53,11 @@ const Trolly = () => {
       </button>
       <h1 className="my-3">NYC , {today} , Trolly</h1>
       <Frame />
-     
+      <div className=" card col-lg-12 mb-3">
+        <div className="card-body">
+          <img src={List} alt="List" />
+        </div>
+      </div>
 
       <div className=" card col-lg-12 mb-3">
         <div className="card-body">
@@ -90,8 +94,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                <span className="px-3">Passport</span>  { counter }   <button className="btn btn-info px-2" onClick={() => setCounter(counter + 1)}>+</button>
-              <button className="btn btn-info px-2" onClick={() => setCounter(counter - 1)}>-</button>
+                Passport
                 </label>
               </div>
               <div className="form-check">
@@ -332,12 +335,33 @@ const Trolly = () => {
           </div>
         </div>
       </div>
-     
+      <div className="types">
+            <p>
+                <button className="btn  my-3 btn-primary fw-bold px-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Add Categorey
+                <span className='icon'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className=" bi bi-caret-right" viewBox="0 0 16 16">
+                        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                    </svg>
+                </span>
+                </button>
+            </p>
+        </div>
       <div className="create">
-        <button onClick={() => {
-          route("/register");
-        }} className="btn btn-danger mt-5">
-        Sign up to compelte
+        <button className="btn btn-danger">
+          Create
+          <span className="cr">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-pencil"
+              viewBox="0 0 16 16"
+            >
+              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+            </svg>
+          </span>
         </button>
       </div>
     </div>

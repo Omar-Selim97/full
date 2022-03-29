@@ -42,6 +42,19 @@
     }
 }
 
+@media (max-width: 390px) {
+    .navbar {
+        display: none;
+    }
+    .trolly {
+        overflow-x: hidden;
+    }
+    .wrapper h1 {
+        font-size: 10px !important;
+        font-weight: bolder;
+    }
+}
+
 .nav-menu.active {
     left: 0;
     transition: 350ms;

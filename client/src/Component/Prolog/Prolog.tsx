@@ -21,6 +21,7 @@ const Prolog = () => {
         <div className="wrapper ">
         <Heading text="EasiestTravel" arc={-100} radius={-300} />
         </div>
+        <h4>Easiest Travel</h4>
         <div className="txt">
             <h2>Hi Traveller</h2>
             <p className="lead fw-bold">

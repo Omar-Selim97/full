@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from "react";
-import DatePicker from 'sassy-datepicker';
+import MultipleDatePicker from "react-multiple-datepicker";
+
 import leisure from './images/1.jpeg'
 import study from './images/2.jpeg'
 import grieving from './images/3.jpeg'
@@ -19,7 +20,6 @@ import './Easy.css'
 import { useNavigate } from 'react-router-dom';
 
 function Easy() {
-  const [color,setColor]=useState('');
   const [toggle,setToggle] =useState(false);
   const toggleIt =()=>{
     setToggle(!toggle)
@@ -30,9 +30,10 @@ function Easy() {
   const [submittedInput, setSubmittedInput] = useState("");
   const [submittedTimes, setHowTimes] = useState("");
   const route = useNavigate()
-  const onChange = (date:any) => {
-    console.log(date.toString());
-  };
+  const [selectedList, setSelectedList] = useState(-1);
+  const [active,setActive]=useState(-1);
+
+
 type Values = {
   id: number;
   title: string;
@@ -44,18 +45,18 @@ const myList2:Array<Values> =[
     id: 1,
     title: 'Suitcase',
     image: suitcase,
-    color:'cornflowerblue',
+    color:'blue',
   },
   {
     id: 2,
     title: 'Briefcase',
     image: briefcase,
-    color:'cornflowerblue',
+    color:'aqua',
   },{
     id: 3,
     title: 'Handbage',
     image: handbage,
-    color:'cornflowerblue',
+    color:'red',
   },
   {
     id: 4,
@@ -73,7 +74,7 @@ const myList2:Array<Values> =[
     id: 6,
     title: 'Family',
     image: family,
-    color:'aqua',
+    color:'orange',
   },
 ]
   const myList:Array<Values> = [
@@ -81,13 +82,13 @@ const myList2:Array<Values> =[
       id: 1,
       title: 'Leisure',
       image: leisure,
-      color:'cornflowerblue',
+      color:'lightgreen',
     },
     {
       id: 2,
       title: 'Study',
       image:study,
-      color:'cornflowerblue',
+      color:'lightblue',
     },
     {
       id: 3,
@@ -120,12 +121,12 @@ const myList2:Array<Values> =[
   ]
   const listImage=myList.map((item,i) => {
     return <span key={i}>
-        <img  key={item.id}  style={{borderColor:color}}     onClick={()=>setColor(item.color)} src={item.image} alt={item.title}   />
+        <img  key={item.id}   style={{borderColor: selectedList === i ? item.color : 'transparent', borderWidth: 3}}     onClick={()=>setSelectedList(i)} src={item.image} alt={item.title}   />
     </span>
   })
   const listImage2=myList2.map((item,i) => {
     return <span key={i}>
-        <img  key={item.id} style={{borderColor:color}}     onClick={()=>setColor(item.color)} src={item.image} alt={item.title}   />
+        <img  key={item.id} style={{borderColor: active === i ? item.color : 'transparent', borderWidth: 3}}     onClick={()=>setActive(i)} src={item.image} alt={item.title}   />
     </span>
   })
   return (
@@ -157,7 +158,9 @@ const myList2:Array<Values> =[
             placeholder="type here"/>
           </p>
           <p className="h5">When </p>
-        <DatePicker className='mx-auto my-3' onChange={onChange} />
+          <MultipleDatePicker
+      onSubmit={(dates: any) => console.log("selected dates ", dates)}
+    />
         <p className="h5">How Many </p>
           <p className='m-5'>
           <input 
@@ -165,7 +168,7 @@ const myList2:Array<Values> =[
           onChange={(e) => setHow(e.target.value)}
           type="text" className="form-control" id="exampleFormControlInput1" placeholder="type here"/>
           </p>
-          <button className='btn-primary' onClick={()=>setSubmittedInput(input)}>add info</button>
+          <button className='btn-primary infbutton' onClick={()=>setSubmittedInput(input)}>add info</button>
           
           <h2>{submittedInput}</h2>
     </form>
@@ -179,10 +182,13 @@ const myList2:Array<Values> =[
         <br/>
         <h4>Choose Luggage</h4>
         {listImage2}
+
+         <br/>
+        <br/>
         <button className="btn px-5 " onClick={()=>setHowTimes(howInput)}>Wallet {submittedTimes}</button>
         <br/>
         <br/>
-        <button onClick={()=>{route('/prepare')}} className="btn btn-danger px-5">Processed</button>
+        <button onClick={()=>{route('/category')}} className="btn btn-danger px-5">Processed</button>
       </main>
     </div>
   );

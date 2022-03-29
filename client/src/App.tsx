@@ -20,6 +20,7 @@ import Login from './Pages/Login';
 import Profile from './Pages/Profile';
 import Order from './Component/Order/Order';
 import { myContext } from './Pages/Context';
+import Trolly1 from './Component/Torlly1/Trolly';
 
 function App() {
     const ctx = useContext(myContext);
@@ -39,6 +40,7 @@ function App() {
        <Route path="/homePage" element={<HomePage/>}/>
        <Route path="/prepare" element={<Prepare/>}/>
         <Route path="/trolly" element={<Trolly/>}/>
+        <Route path="/trolly1" element={<Trolly1/>}/>
         <Route path="/plan" element={<Plan/>}/>
         <Route path="/article" element={<Article/>}/>
         <Route path="/register" element={<Sign/>}/>

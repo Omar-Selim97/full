@@ -5,8 +5,9 @@ import short from './short.png'
 import sofa from './sofa.png'
 import trent from './trent.png'
 import van from './van.png'
+import '../scond.css'
 const Accomodation = () => {
-  const [color,setColor]=useState('transperant');
+  const [aco,setAco]=useState(-1);
   type Values = {
     id: number;
     title: string;
@@ -56,12 +57,12 @@ const Accomodation = () => {
   ]
   const listImage=myList.map((item,i) => {
     return <span key={i}>
-        <img style={{background:color}}  key={item.id}  onClick={()=>{setColor(item.color)}} src={item.image} alt={item.title}   />
+        <img className='lisImg' style={{borderColor: aco === i ? item.color : 'transparent', borderWidth: 3}}     onClick={()=>setAco(i)} key={item.id}   src={item.image} alt={item.title}   />
     </span>
   })
   return (
    
-      <div className="mx-auto my-5 card  col-sm-8 col-md-8 col-lg-6">
+      <div className="mx-auto aco my-5 card  col-sm-8 col-md-8 col-lg-6">
           <div className="card-body">
             <h4 className="card-title">
               Accomodation

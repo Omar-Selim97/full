@@ -5,8 +5,9 @@ import hiking from './hiking.png'
 import golf from './golf.png'
 import photo from './photo.png'
 import swimming from './swimming.png'
+import '../scond.css'
 const Activity = () => {
-  const [color,setColor]=useState('transperant');
+  const [color,setColor]=useState(-1);
   type Values = {
     id: number;
     title: string;
@@ -56,11 +57,11 @@ const Activity = () => {
   ]
   const listImage=myList.map((item,i) => {
     return <span key={i}>
-        <img style={{background:color}}  key={item.id}  onClick={()=>{setColor(item.color)}} src={item.image} alt={item.title}   />
+        <img className='lisImg' key={item.id} style={{borderColor: color === i ? item.color : 'transparent', borderWidth: 3}}     onClick={()=>setColor(i)} src={item.image} alt={item.title}   />
     </span>
   })
   return (
-    <div className="mx-auto my-5 card  col-sm-8 col-md-8 col-lg-6">
+    <div className="mx-auto active my-5 card  col-sm-8 col-md-8 col-lg-6">
           <div className="card-body">
             <h4 className="card-title">
               Activity

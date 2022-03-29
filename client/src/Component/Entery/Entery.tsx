@@ -24,7 +24,7 @@ const Entery = () => {
         <div className="wrapper mt-5">
         <Heading text="EasiestTravel" arc={-100} radius={-300} />
         </div>
-        
+        <h4>Easiest Travel</h4> 
         </div>
         
     </div>

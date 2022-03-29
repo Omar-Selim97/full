@@ -73,7 +73,7 @@ const Frame = () => {
       ]
       const listImage=myList.map((item,i) => {
         return <span key={i}>
-            <img className='lisImg'  key={item.id} style={{borderColor: trol === i ? item.color : 'transparent', borderWidth: 3}} onClick={()=>setTrol(i)} src={item.image} alt={item.title}   />
+            <img  key={item.id} style={{borderColor: trol === i ? item.color : 'transparent', borderWidth: 3}} onClick={()=>setTrol(i)} src={item.image} alt={item.title}   />
         </span>
       })
       return (

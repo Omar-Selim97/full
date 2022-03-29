@@ -6,7 +6,7 @@ import plane from './plane.png'
 import ship from './ship.png'
 import taxi from './taxi.png'
 const Trans = () => {
-  const [color,setColor]=useState('transperant');
+  const [trans,setTrans]=useState(-1);
 
   type Values = {
     id: number;
@@ -57,11 +57,11 @@ const Trans = () => {
   ]
   const listImage=myList.map((item,i) => {
     return <span key={i}>
-        <img style={{background:color}}  key={item.id}  onClick={()=>{setColor(item.color)}} src={item.image} alt={item.title}   />
+        <img className='lisImg' key={item.id}  style={{borderColor: trans === i ? item.color : 'transparent', borderWidth: 3}}     onClick={()=>setTrans(i)} src={item.image} alt={item.title}   />
     </span>
   })
   return (
-    <div className="mx-auto my-5 card col-xs-8  col-sm-8 col-md-8 col-lg-6">
+    <div className="mx-auto my-5 trans card col-xs-8  col-sm-8 col-md-8 col-lg-6">
     <div className="card-body">
       <h4 className="card-title">
         Transport

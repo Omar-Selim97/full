@@ -11,7 +11,6 @@ import User from "./User";
 import dotenv from "dotenv";
 import { DatabaseUserInterface } from "./InterfaceDatabase";
 import { UserT } from "./UserIterface";
-import {orderRouter} from "./routes/orderRouter";
 
 
 const LocalStrategy = passportLocal.Strategy;
@@ -166,7 +165,6 @@ app.get("/getallusers", isAdministratorMiddleware, async (req, res) => {
   });
 });
 app.use(bodyParser.json());
-app.use("/orders", orderRouter);
 
 
 app.listen(4000, () => {
