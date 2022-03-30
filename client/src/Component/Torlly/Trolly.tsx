@@ -91,7 +91,7 @@ const Trolly = () => {
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
                 <span className="px-3">Passport</span>  { counter }   <button className="btn btn-info px-2" onClick={() => setCounter(counter + 1)}>+</button>
-              <button className="btn btn-info px-2" onClick={() => setCounter(counter - 1)}>-</button>
+              <button className="btn btn-info mx-2" onClick={() => setCounter(counter - 1)}>-</button>
                 </label>
               </div>
               <div className="form-check">
