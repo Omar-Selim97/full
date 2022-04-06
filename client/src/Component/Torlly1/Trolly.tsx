@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 const Trolly = () => {
   const route = useNavigate();
+  const [counter, setCounter] = React.useState<number>(3);
+  const [counter2, setCounter2] = React.useState<number>(6);
 
   const today = new Date().toLocaleDateString();
   return (
@@ -76,7 +78,7 @@ const Trolly = () => {
               aria-expanded="false"
               aria-controls="flush-collapseOne"
             >
-             Esential
+              Esential
             </button>
           </h2>
           <div
@@ -94,7 +96,19 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Passport
+                  <span className="px-3">Passport</span> {counter}{" "}
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter(counter + 1)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter(counter - 1)}
+                  >
+                    -
+                  </button>
                 </label>
               </div>
               <div className="form-check">
@@ -105,7 +119,19 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Wallet
+                  <span className="px-4">Wallet</span> {counter2}{" "}
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter2(counter2 + 1)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter2(counter2 - 1)}
+                  >
+                    -
+                  </button>
                 </label>
               </div>
               <div className="form-check">
@@ -116,7 +142,19 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Coins
+                  <span className="px-4">Coins</span> {counter}{" "}
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter(counter + 1)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter(counter - 1)}
+                  >
+                    -
+                  </button>
                 </label>
               </div>
               <div className="form-check">
@@ -127,7 +165,19 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Mobile
+                  <span className="px-3">Mobile</span> {counter2}{" "}
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter2(counter2 + 1)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter2(counter2 - 1)}
+                  >
+                    -
+                  </button>
                 </label>
               </div>
             </div>
@@ -143,7 +193,7 @@ const Trolly = () => {
               aria-expanded="false"
               aria-controls="flush-collapseTwo"
             >
-                Clothes
+              Clothes
             </button>
           </h2>
           <div
@@ -152,7 +202,7 @@ const Trolly = () => {
             aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample"
           >
-             <div className="accordion-body">
+            <div className="accordion-body">
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -161,7 +211,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Shirts
+                  Shirts
                 </label>
               </div>
               <div className="form-check">
@@ -172,7 +222,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Siwmware
+                  Siwmware
                 </label>
               </div>
               <div className="form-check">
@@ -183,7 +233,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Pants
+                  Pants
                 </label>
               </div>
               <div className="form-check">
@@ -194,7 +244,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Underware
+                  Underware
                 </label>
               </div>
             </div>
@@ -210,7 +260,7 @@ const Trolly = () => {
               aria-expanded="false"
               aria-controls="flush-collapseThree"
             >
-                Care !
+              Care !
             </button>
           </h2>
           <div
@@ -219,7 +269,7 @@ const Trolly = () => {
             aria-labelledby="flush-headingThree"
             data-bs-parent="#accordionFlushExample"
           >
-             <div className="accordion-body">
+            <div className="accordion-body">
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -228,7 +278,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Coditioner
+                  Coditioner
                 </label>
               </div>
               <div className="form-check">
@@ -239,7 +289,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Shampo
+                  Shampo
                 </label>
               </div>
               <div className="form-check">
@@ -250,7 +300,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Soap
+                  Soap
                 </label>
               </div>
               <div className="form-check">
@@ -261,7 +311,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Toath
+                  Toath
                 </label>
               </div>
             </div>
@@ -277,7 +327,7 @@ const Trolly = () => {
               aria-expanded="false"
               aria-controls="flush-collapseFour"
             >
-                Accessiores
+              Accessiores
             </button>
           </h2>
           <div
@@ -286,7 +336,7 @@ const Trolly = () => {
             aria-labelledby="flush-headingFour"
             data-bs-parent="#accordionFlushExample"
           >
-             <div className="accordion-body">
+            <div className="accordion-body">
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -295,7 +345,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Shoes
+                  Shoes
                 </label>
               </div>
               <div className="form-check">
@@ -306,7 +356,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Phones Chargers
+                  Phones Chargers
                 </label>
               </div>
               <div className="form-check">
@@ -317,7 +367,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Earphones
+                  Earphones
                 </label>
               </div>
               <div className="form-check">
@@ -328,26 +378,49 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Cat cage
+                  Cat cage
                 </label>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="types">
-            <p>
-                <button className="btn  my-3 btn-primary fw-bold px-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Add Categorey
-                <span className='icon'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className=" bi bi-caret-right" viewBox="0 0 16 16">
-                        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                    </svg>
-                </span>
-                </button>
-            </p>
+      <div className="accordion-item">
+        <h2 className="accordion-header" id="flush-headingFive">
+          <button
+            className="accordion-button collapsed btn-primary fw-bold px-5"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFive"
+            aria-expanded="false"
+            aria-controls="flush-collapseFive"
+          >
+            Add Categories
+            <span className="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className=" bi bi-caret-right"
+                viewBox="0 0 16 16"
+              >
+                <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
+              </svg>
+            </span>
+          </button>
+        </h2>
+        <div
+          id="flush-collapseFive"
+          className="accordion-collapse collapse"
+          aria-labelledby="flush-headingFive"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div className="accordion-body">We Working at this now</div>
         </div>
-      <div className="create">
+      </div>
+
+      <div className="create my-3">
         <button className="btn btn-danger">
           Create
           <span className="cr">

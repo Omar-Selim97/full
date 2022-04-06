@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 const Trolly = () => {
   const route = useNavigate();
-  const [counter, setCounter] = React.useState<number>(3)
-  const [counter2, setCounter2] = React.useState<number>(6)
+  const [counter, setCounter] = React.useState<number>(3);
+  const [counter2, setCounter2] = React.useState<number>(6);
   const today = new Date().toLocaleDateString();
   return (
     <div className="trolly m-auto">
@@ -53,7 +53,6 @@ const Trolly = () => {
       </button>
       <h1 className="my-3">NYC , {today} , Trolly</h1>
       <Frame />
-     
 
       <div className=" card col-lg-12 mb-3">
         <div className="card-body">
@@ -72,7 +71,7 @@ const Trolly = () => {
               aria-expanded="false"
               aria-controls="flush-collapseOne"
             >
-             Esential
+              Esential
             </button>
           </h2>
           <div
@@ -90,8 +89,19 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                <span className="px-3">Passport</span>  { counter }   <button className="btn btn-info px-2" onClick={() => setCounter(counter + 1)}>+</button>
-              <button className="btn btn-info mx-2" onClick={() => setCounter(counter - 1)}>-</button>
+                  <span className="px-3">Passport</span> {counter}{" "}
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter(counter + 1)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter(counter - 1)}
+                  >
+                    -
+                  </button>
                 </label>
               </div>
               <div className="form-check">
@@ -102,7 +112,19 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Wallet
+                  <span className="px-4">Wallet</span> {counter2}{" "}
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter2(counter2 + 1)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter2(counter2 - 1)}
+                  >
+                    -
+                  </button>
                 </label>
               </div>
               <div className="form-check">
@@ -113,7 +135,19 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Coins
+                  <span className="px-4">Coins</span> {counter}{" "}
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter(counter + 1)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter(counter - 1)}
+                  >
+                    -
+                  </button>
                 </label>
               </div>
               <div className="form-check">
@@ -124,7 +158,19 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Mobile
+                  <span className="px-3">Mobile</span> {counter2}{" "}
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter2(counter2 + 1)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-transperant mx-2"
+                    onClick={() => setCounter2(counter2 - 1)}
+                  >
+                    -
+                  </button>
                 </label>
               </div>
             </div>
@@ -140,7 +186,7 @@ const Trolly = () => {
               aria-expanded="false"
               aria-controls="flush-collapseTwo"
             >
-                Clothes
+              Clothes
             </button>
           </h2>
           <div
@@ -149,7 +195,7 @@ const Trolly = () => {
             aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample"
           >
-             <div className="accordion-body">
+            <div className="accordion-body">
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -158,7 +204,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Shirts
+                  Shirts
                 </label>
               </div>
               <div className="form-check">
@@ -169,7 +215,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Siwmware
+                  Siwmware
                 </label>
               </div>
               <div className="form-check">
@@ -180,7 +226,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Pants
+                  Pants
                 </label>
               </div>
               <div className="form-check">
@@ -191,7 +237,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Underware
+                  Underware
                 </label>
               </div>
             </div>
@@ -207,7 +253,7 @@ const Trolly = () => {
               aria-expanded="false"
               aria-controls="flush-collapseThree"
             >
-                Care !
+              Care !
             </button>
           </h2>
           <div
@@ -216,7 +262,7 @@ const Trolly = () => {
             aria-labelledby="flush-headingThree"
             data-bs-parent="#accordionFlushExample"
           >
-             <div className="accordion-body">
+            <div className="accordion-body">
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -225,7 +271,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Coditioner
+                  Coditioner
                 </label>
               </div>
               <div className="form-check">
@@ -236,7 +282,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Shampo
+                  Shampo
                 </label>
               </div>
               <div className="form-check">
@@ -247,7 +293,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Soap
+                  Soap
                 </label>
               </div>
               <div className="form-check">
@@ -258,7 +304,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Toath
+                  Toath
                 </label>
               </div>
             </div>
@@ -274,7 +320,7 @@ const Trolly = () => {
               aria-expanded="false"
               aria-controls="flush-collapseFour"
             >
-                Accessiores
+              Accessiores
             </button>
           </h2>
           <div
@@ -283,7 +329,7 @@ const Trolly = () => {
             aria-labelledby="flush-headingFour"
             data-bs-parent="#accordionFlushExample"
           >
-             <div className="accordion-body">
+            <div className="accordion-body">
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -292,7 +338,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Shoes
+                  Shoes
                 </label>
               </div>
               <div className="form-check">
@@ -303,7 +349,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Phones Chargers
+                  Phones Chargers
                 </label>
               </div>
               <div className="form-check">
@@ -314,7 +360,7 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Earphones
+                  Earphones
                 </label>
               </div>
               <div className="form-check">
@@ -325,19 +371,22 @@ const Trolly = () => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label" htmlFor="flexCheckDefault">
-                Cat cage
+                  Cat cage
                 </label>
               </div>
             </div>
           </div>
         </div>
       </div>
-     
+
       <div className="create">
-        <button onClick={() => {
-          route("/register");
-        }} className="btn btn-danger mt-5">
-        Sign up to compelte
+        <button
+          onClick={() => {
+            route("/register");
+          }}
+          className="btn btn-danger mt-5"
+        >
+          Sign up to compelte
         </button>
       </div>
     </div>
