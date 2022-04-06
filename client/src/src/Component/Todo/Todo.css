@@ -1,0 +1,46 @@
+.todo {
+    background-color: #6031fd;
+    min-height: 750px !important;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.tdr,
+.tod,
+.bag {
+    float: right;
+}
+
+.bag img {
+    min-width: 200px;
+    min-height: 200px;
+    margin-right: -100%;
+}
+
+.ba {
+    margin-top: 50px;
+}
+
+.clear {
+    clear: both;
+}
+
+.ph {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    min-height: 550px;
+    background-image: linear-gradient(to bottom, #6031fd 0%, rgba(109, 71, 235, 0.527) 100%), url(to.jpg);
+    ;
+}
+
+.ph .bn {
+    margin-top: 80px;
+    border-radius: 10px;
+}
+
+.group button {
+    min-width: 80%;
+    min-height: 30px;
+}

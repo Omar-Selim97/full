@@ -1,0 +1,27 @@
+.imgS img {
+    min-width: fit-content;
+}
+
+.google {
+    margin-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+.email {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.email input:placeholder-shown {
+    font-weight: bold;
+}
+
+.pass {
+    margin-bottom: 20px;
+}
+
+.pass input:placeholder-shown {
+    font-weight: bold;
+}
